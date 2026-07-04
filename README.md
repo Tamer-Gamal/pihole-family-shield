@@ -36,7 +36,7 @@ Open the **interactive guidebook** — it walks you through everything with
 diagrams, checklists, and copy-paste commands:
 
 ```
-pi-hole/guide/index.html      ← double-click to open in your browser
+guide/index.html      ← double-click to open in your browser
 ```
 
 Order of the journey:
@@ -51,7 +51,7 @@ Order of the journey:
 ## 🧰 What's in this folder
 
 ```
-pi-hole/
+pihole-family-shield/
 ├── README.md                     ← you are here
 ├── guide/
 │   └── index.html                ← the interactive, illustrated guidebook
@@ -76,16 +76,13 @@ pi-hole/
 
 ## ⚡ Quick start (for people comfortable in a terminal)
 
-The kit is **self-contained** — it does **not** need access to any private repo. Get the
-`pi-hole/` folder onto a freshly-flashed Raspberry Pi OS Lite (connected to your network),
-then run the installer.
+On a freshly-flashed Raspberry Pi OS Lite (connected to your network), download this
+kit and run the installer:
 
 ```bash
-# On your computer, in the folder that contains pi-hole/ :
-scp -r ./pi-hole pi@pihole.local:~/
-
-# Then on the Pi:
-cd ~/pi-hole/scripts
+sudo apt-get update && sudo apt-get install -y git
+git clone https://github.com/Tamer-Gamal/pihole-family-shield.git
+cd pihole-family-shield/scripts
 cp setup.conf.example setup.conf
 nano setup.conf              # set your admin password (family mode is on by default)
 sudo ./bootstrap.sh
@@ -94,25 +91,21 @@ sudo ./bootstrap.sh
 Then set your **router's DNS server** to the Pi's IP address and reboot your
 devices. Done.
 
-> Other ways to move the folder: a USB stick, a cloud link, or `git clone` if you keep
-> the kit in a repo the target can read. See **Sharing with friends** below.
+> No internet on the Pi yet? Copy this folder over with a USB stick or
+> `scp -r . pi@pihole.local:~/pihole-family-shield` instead, then run the same steps.
 
 ---
 
 ## 🧬 Sharing with friends / making more Pi-holes
 
 **Getting the kit to a friend** (it contains no secrets, so it travels freely):
-- **Public repo (easiest)** — the kit is mirrored to a public repo so anyone can install it
-  with one command: <https://github.com/Tamer-Gamal/pihole-family-shield>
+- **Send them this repo (easiest)** — one command on their Pi:
   ```bash
   git clone https://github.com/Tamer-Gamal/pihole-family-shield.git
   cd pihole-family-shield/scripts && cp setup.conf.example setup.conf && nano setup.conf && sudo ./bootstrap.sh
   ```
-- **USB stick / cloud link** — hand them the `pi-hole/` folder; they copy it onto their Pi.
-- **`scp`** — if you set their Pi up, `scp -r ./pi-hole pi@pihole.local:~/` from your computer.
-
-> This `pi-hole/` folder inside the private homelab repo is the **source**; the public repo above
-> is a mirror of it. When you change the kit here, re-push the same files to the public repo.
+- **USB stick / cloud link** — hand them this whole folder; they copy it onto their Pi and
+  run the same steps from the Quick start.
 
 **Reproducing the Pi-hole itself**, two ways:
 
