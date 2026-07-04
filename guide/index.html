@@ -195,7 +195,7 @@
       <span class="tag">👨‍👩‍👧 <b>Family-first</b></span>
       <span class="tag">⏱️ <b>~45 min</b></span>
       <span class="tag">🧠 <b>No coding</b></span>
-      <span class="tag">🔁 <b>Repeatable for friends</b></span>
+      <span class="tag">🔁 <b>Easy to repeat</b></span>
     </div>
     <p style="margin-top:20px; font-size:.92rem; color:var(--muted)">Built on <a href="https://pi-hole.net" target="_blank" rel="noopener"><b>Pi-hole®</b></a> - the free,
       open-source network blocker (<a href="https://github.com/pi-hole/pi-hole" target="_blank" rel="noopener">source on GitHub</a>).
@@ -261,7 +261,7 @@
       <li><a href="#s-install" data-step="install"><span class="n">4</span> Install</a></li>
       <li><a href="#s-router" data-step="router"><span class="n">5</span> Point network</a></li>
       <li><a href="#s-verify" data-step="verify"><span class="n">6</span> Verify</a></li>
-      <li><a href="#s-friends" data-step="friends"><span class="n">★</span> Share</a></li>
+      <li><a href="#s-friends" data-step="friends"><span class="n">★</span> Repeat</a></li>
     </ol>
   </nav>
 
@@ -350,19 +350,22 @@
         It is not a substitute for supervision.</div>
 
       <h3 style="margin:30px 0 4px">🧩 Layer 2 · HaramBlur - blur what Pi-hole can't see inside</h3>
-      <p class="prose">Pi-hole guards the <b>network</b>, so it can't reach <i>inside</i> a page it allows.
-        <b>HaramBlur</b> closes that gap: a free, open-source browser add-on that uses <b>on-device AI</b> to
-        automatically <b>blur inappropriate images and videos right on the page</b>. Install it in each family
-        member's browser and it works right away, no Pi-hole changes needed.</p>
+      <p class="prose">Pi-hole guards the <b>network</b>, so it can't reach <i>inside</i> a page it allows - and it
+        <b>can't install HaramBlur for you</b> either. HaramBlur is a <b>browser</b> add-on: its AI runs on each
+        device, doing the job the network physically can't. It's a free, open-source extension that automatically
+        <b>blurs inappropriate images and videos right on the page</b>. Install it in each family member's browser
+        and it works right away, no Pi-hole changes needed.</p>
       <div class="grid2">
         <div class="card"><h3>Install (per browser)</h3>
           <p style="color:var(--muted)"><a href="https://chrome.google.com/webstore/detail/haramblur/pbcoegikffnadpahojjhgdladmmddeji" target="_blank" rel="noopener"><b>Chrome / Edge / Brave</b></a>
              /  <a href="https://addons.mozilla.org/addon/haramblur/" target="_blank" rel="noopener"><b>Firefox</b></a>
-            (also Firefox for Android). Then set the blur strength &amp; strictness in its pop-up.</p></div>
-        <div class="card"><h3>Private &amp; on-device</h3>
-          <p style="color:var(--muted)">All detection runs <b>in the browser</b> - it doesn't send your browsing
-            anywhere. Open-source (AGPL-3.0). Because the AI runs on the device, it can use noticeable CPU on older
-            phones/laptops - lower the strictness or pause it if a device struggles.</p></div>
+            (also Firefox for Android). Then set the blur strength &amp; strictness in its pop-up. All detection runs
+            <b>in the browser</b> - nothing is uploaded.</p></div>
+        <div class="card"><h3>Lock it on (so kids can't remove it)</h3>
+          <p style="color:var(--muted)">You can't push it from the Pi, but on a device you manage you can
+            <b>force-install</b> it with a browser policy so it can't be turned off. Copy-paste steps for
+            Chrome/Edge and Firefox (with the verified IDs) are in
+            <code>companions/haramblur.md</code>.</p></div>
       </div>
       <div class="callout safe"><b>Two layers, one goal.</b> Pi-hole stops bad <i>sites</i> for every device on the
         network; HaramBlur blurs bad <i>images</i> on the sites that remain. Together they cover far more than either
@@ -563,8 +566,9 @@
     <!-- FRIENDS -->
     <section class="step" id="s-friends" data-step="friends">
       <span class="eyebrow">Bonus</span>
-      <h2><span class="num">★</span> Make one for a friend</h2>
-      <p class="prose">The whole point of this kit is that the <b>second</b> Pi-hole takes ten minutes. Two ways:</p>
+      <h2><span class="num">★</span> Set up another one</h2>
+      <p class="prose">Once you've done it once, a <b>second</b> Pi-hole takes about ten minutes - handy for a second
+        home, or a spare as backup. Two ways:</p>
       <div class="grid2">
         <div class="card"><h3>Fresh + same settings</h3>
           <p style="color:var(--muted)">Flash a new card, copy your edited <code>setup.conf</code> onto the new Pi,
@@ -583,8 +587,7 @@
     <footer>
       <p><b>Home Shield</b> is a small Raspberry Pi project. Everything here runs on your own hardware. Your
         progress on this page is saved only in <i>this browser</i>, on <i>this device</i> - nothing is uploaded.</p>
-      <p style="margin-top:10px">Made to be shared. Flash a card, hand a friend the address, and they're protected in
-        an afternoon.</p>
+      <p style="margin-top:10px">Set up as many as you like - each one takes about an afternoon, start to finish.</p>
       <p style="margin-top:10px"><b>Credits:</b> Pi-hole® is free, open-source software by the Pi-hole team
         (<a href="https://pi-hole.net" target="_blank" rel="noopener">pi-hole.net</a> ·
         <a href="https://github.com/pi-hole/pi-hole" target="_blank" rel="noopener">source on GitHub</a>). This kit

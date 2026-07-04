@@ -26,8 +26,8 @@ sites (see **Layer 2** below).
 > can be bypassed with a VPN unless hardened. Use it **with** device parental controls
 > (Screen Time / Family Link) and conversations - a strong first layer, not a guarantee.
 
-Built to be **cloned**: edit one config file, run one script, and you have an
-identical, family-safe Pi-hole. Make one for yourself, then make more for friends.
+Built to be **repeatable**: edit one config file, run one script, and you get an
+identical, family-safe Pi-hole every time - for your home, a second location, or a spare.
 
 ---
 
@@ -97,18 +97,10 @@ devices. Done.
 
 ---
 
-## Sharing with friends / making more Pi-holes
+## Set up more than one Pi-hole
 
-**Getting the kit to a friend** (it contains no secrets, so it travels freely):
-- **Send them this repo (easiest)** - one command on their Pi:
-  ```bash
-  git clone https://github.com/Tamer-Gamal/pihole-family-shield.git
-  cd pihole-family-shield/scripts && cp setup.conf.example setup.conf && nano setup.conf && sudo ./bootstrap.sh
-  ```
-- **USB stick / cloud link** - hand them this whole folder; they copy it onto their Pi and
-  run the same steps from the Quick start.
-
-**Reproducing the Pi-hole itself**, two ways:
+Everything here is designed to be repeated - a second home, a spare, or a clean rebuild.
+Two ways:
 
 1. **Fresh + same config** - flash a new SD card, copy your edited `setup.conf`,
    run `sudo ./bootstrap.sh`. Identical, family-safe result every time.
@@ -144,7 +136,12 @@ allowed sites. It's a **separate project** (not part of this kit); install it pe
 - Chrome/Edge/Brave: <https://chrome.google.com/webstore/detail/haramblur/pbcoegikffnadpahojjhgdladmmddeji>
 - Firefox (desktop & Android): <https://addons.mozilla.org/addon/haramblur/>
 
-Full setup, settings, caveats & lock-down tips: **[`companions/haramblur.md`](companions/haramblur.md)**.
+> **Can you enforce it from the Pi / network? No.** HaramBlur runs *inside* each browser;
+> DNS filtering can't install software or reach inside an encrypted page - that's exactly why
+> it's a separate on-device layer. What you **can** do is **force-install** it on devices you
+> manage (Chrome/Edge `ExtensionInstallForcelist`, Firefox `policies.json`) so it can't be
+> removed. Copy-paste steps + verified extension IDs + a per-platform coverage table are in
+> **[`companions/haramblur.md`](companions/haramblur.md)**.
 
 ---
 
